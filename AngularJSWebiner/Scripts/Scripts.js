@@ -119,5 +119,7 @@
 
     //yukardakiler directApp.js taşındı ve app modulü oluştururken inject edildi
 
+    //yeni açıklama satırı
+
 })(angular);
 //angular'a cast etmek zorunda değiliz, şimdilik örnekte öğle diye yaptım
