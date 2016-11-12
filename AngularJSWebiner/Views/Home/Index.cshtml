@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS Webiner</title>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/Scripts.js"></script>
+    <script src="~/Scripts/directApp.js"></script>
+</head>
+<body ng-controller="MainController">
+
+    <!---------------------- SAMPLE 1------------------------------------------------------------->
+    @*<div ng-controller="MainController">
+            <div>
+                {{20/3}}
+            </div>
+            <h1>
+                {{Message}}
+            </h1>
+
+        </div>
+
+        <div ng-controller="TestController">
+            {{Message}}
+        </div>*@
+
+
+
+    <!---------------------- SAMPLE 2------------------------------------------------------------->
+    @*<div ng-controller="MainController">
+
+            <div>
+                <strong>Name:</strong>
+                {{User.Name}}
+            </div>
+            <div>
+                <strong>Location:</strong>
+                {{User.Location}}
+            </div>
+            <div>
+                <strong>Picture:</strong>
+                <img ng-src="{{User.Picture}}" />
+            </div>
+
+        </div>*@
+
+
+    <!---------------------- SAMPLE 3------------------------------------------------------------->
+    <h1>{{counter}}</h1>
+
+    <div search-user></div>
+
+    <div ng-show="User">
+
+        <div>
+
+            <div>
+                <strong>ID:</strong>{{User.id}}
+            </div>
+            <div>
+                <strong>Name:</strong>{{User.name}}
+            </div>
+            <div>
+                <strong>Type:</strong>{{User.type}}
+            </div>
+            <div>
+                <strong>Created Date:</strong>{{User.created_at}}
+            </div>
+            @*<div>
+                    <strong>Picture:</strong><img ng-src="{{User.avatar_url}}" />
+                </div>
+                <div>
+                    <strong>JSON Data</strong>
+                    <textarea rows="10" cols="100">{{User | json}}</textarea>
+                </div>*@
+
+            <user-detail></user-detail>
+        </div>
+
+        <hr />
+        <p><strong>User Repo Bilgisi </strong></p>
+
+        <select ng-model="orderKey">
+            <option>name</option>
+            <option>full_name</option>
+            <option>language</option>
+            <option value="stargazers_count">Yıldız(Artan)</option>
+            <option value="-stargazers_count">Yıldız(Azalan)</option>
+            <option>has_wiki</option>
+        </select>
+
+        <br />
+
+        Filter: <input type="text" placeholder="Search" ng-model="filterKey" />{{filterKey}}
+
+        <div ng-include="'UserRepo'"></div>
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+﻿<table width="800px">
+    <tr>
+        <th>Name</th>
+        <th>Full Name</th>
+        <th>Language</th>
+        <th>Yıldız</th>
+        <th>Has Wiki</th>
+    </tr>
+    <tr ng-repeat="repo in Repos | orderBy:orderKey | filter: filterKey">
+        <td>{{repo.name}}</td>
+        <td>{{repo.full_name}}</td>
+        <td>{{repo.language}}</td>
+        <td>{{repo.stargazers_count | number:1}}</td>
+        <td>{{repo.has_wiki | checkFilter}}</td>
+    </tr>
+</table>
